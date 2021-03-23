@@ -22,6 +22,9 @@ import io.mkknowledge.managerportal.security.services.ManagerDetailsServiceImpl;
 public class AuthTokenFilter extends OncePerRequestFilter {
 	
 	@Autowired
+	JwtUitls jwtUtils;
+	
+	@Autowired
 	ManagerDetailsServiceImpl managerDetailsService;
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(AuthTokenFilter.class);
