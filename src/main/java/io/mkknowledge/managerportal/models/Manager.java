@@ -89,6 +89,21 @@ public class Manager {
 	public Manager() {
 		
 	}
+	
+	public Manager(String email, String username,
+			String firstName, String lastName,
+			String password, String address, Date dob,
+			String company) {
+		
+		this.email = email;
+		this.username = username;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.password = password;
+		this.address = address;
+		this.dob = dob;
+		this.company = company;
+	}
 
 	public Long getId() {
 		return id;
