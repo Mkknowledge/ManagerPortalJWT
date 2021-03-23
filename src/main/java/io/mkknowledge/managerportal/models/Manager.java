@@ -24,7 +24,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table( name="manager",
-		uniqueConstraints = {@UniqueConstraint(columnNames = "email")})
+		uniqueConstraints = {
+				@UniqueConstraint(columnNames = "username"),
+				@UniqueConstraint(columnNames = "email")})
 public class Manager {
 	
 	@Id
@@ -35,6 +37,10 @@ public class Manager {
 	@Size(max = 50)
 	@Email
 	private String email;
+	
+	@NotBlank
+	@Size(max = 20)
+	private String username;
 	
 	@NotBlank
 	@Size(max = 20)
@@ -98,6 +104,14 @@ public class Manager {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getFirstName() {
